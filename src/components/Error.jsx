@@ -4,7 +4,7 @@ const Error = () => {
   return (
       <div>
           <h3>
-              <Message message="Both fields are required" />
+              <Message message="All fields are required" />
           </h3>
       </div>
   );
