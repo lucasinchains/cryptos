@@ -3,15 +3,16 @@ import { useState } from 'react';
 
 const Form = ({setCurrency, setCryptocurrency, onFormSubmit}) => {
     
+
   return (
     <div>
         <form onSubmit={onFormSubmit}>
             <label htmlFor="currency-list">Choose currency: </label>
             <select name="currency-list" id="currency-list" onChange={e => setCurrency(e.target.value)}>
                 <option value="">--Select--</option>
-                <option value="us-dollar">US Dollar</option>
-                <option value="euro">Euro</option>
-                <option value="gb-pound">Sterling Pound</option>
+                <option value='USD'>USD</option>
+                <option value='EUR'>EUR</option>
+                <option value='GBP'>GBP</option>
             </select>
             <br></br>
             <label htmlFor="crypto-list">Choose cryptocurrency: </label>
