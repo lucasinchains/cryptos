@@ -16,18 +16,18 @@ function App() {
   const [error, setError] = useState(false);
 
   useEffect(async () => {
-    if(currencyPair.length > 0) {
+
+    if(currencyPair.length) {
       const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptocurrency}&tsyms=${currency}&api_key=${API_KEY}`
       const response = await axios.get(URL);
-      setData(response.data.DISPLAY)
+      setData([response.data.DISPLAY[`${cryptocurrency}`][`${currency}`]])
+      setCurrencyPair([])
     }
-  }, [currencyPair]
-  );
+  }, [currencyPair]);
   
- // I NEED TO RESET THE FORM AFTER SUBMIT BUT HOW? VALUES IN Form.jsx ARE STATIC STRINGS
   const onFormSubmit = (e) => {
     e.preventDefault();
-  
+    
     if(currency === "" || cryptocurrency === "") {
       setError(true);
       return;
@@ -36,7 +36,6 @@ function App() {
       setCurrencyPair([currency, cryptocurrency]);
     }
   }; 
-  
   
   return (
     <div>
@@ -51,7 +50,7 @@ function App() {
             />
             <br></br>
             <br></br>
-            {currencyPair.length ? <DataInfo /> : null}
+            {data.length ? <DataInfo data={data} /> : null}
           </div>
           <div className="eight wide column">
             <VideoList />
