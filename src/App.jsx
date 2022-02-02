@@ -5,18 +5,21 @@ import Form from "./components/Form"
 import VideoList from "./components/VideoList"
 import Error from "./components/Error"
 import DataInfo from "./components/DataInfo"
-import { API_KEY } from "./components/API"
+import { API_KEY } from "./components/apis/crypto-compare"
+import { KEY_YT } from "./components/apis/youtube"
 
 
 function App() {
   const [currency, setCurrency] = useState('');
   const [cryptocurrency, setCryptocurrency] = useState('');
   const [currencyPair, setCurrencyPair] = useState([]);
+
   const [data, setData] = useState([])
+  const [videos, setVideos] = useState([]);
+
   const [error, setError] = useState(false);
 
   useEffect(async () => {
-
     if(currencyPair.length) {
       const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptocurrency}&tsyms=${currency}&api_key=${API_KEY}`
       const response = await axios.get(URL);
@@ -24,6 +27,21 @@ function App() {
       setCurrencyPair([])
     }
   }, [currencyPair]);
+
+  useEffect(async () => {
+    if(currencyPair.length) {
+      const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
+          params: {
+            part: 'snippet',
+            q: `${cryptocurrency} news`,
+            key: KEY_YT
+          }
+        }
+      )
+      console.log(response)
+    }
+  }, [data])
+
   
   const onFormSubmit = (e) => {
     e.preventDefault();
