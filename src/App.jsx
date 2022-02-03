@@ -23,25 +23,21 @@ function App() {
     if(currencyPair.length) {
       const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptocurrency}&tsyms=${currency}&api_key=${API_KEY}`
       const response = await axios.get(URL);
-      setData([response.data.DISPLAY[`${cryptocurrency}`][`${currency}`]])
-      setCurrencyPair([])
-    }
-  }, [currencyPair]);
 
-  useEffect(async () => {
-    if(currencyPair.length) {
-      const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
+      const responseVideos = await axios.get('https://www.googleapis.com/youtube/v3/search', {
           params: {
             part: 'snippet',
-            q: `${cryptocurrency} news`,
+            q: `${cryptocurrency} crypto news`,
             key: KEY_YT
           }
         }
       )
-      console.log(response)
-    }
-  }, [data])
 
+      setData([response.data.DISPLAY[`${cryptocurrency}`][`${currency}`]])
+      setVideos(responseVideos.data.items)
+      setCurrencyPair([])
+    }
+  }, [currencyPair]);
   
   const onFormSubmit = (e) => {
     e.preventDefault();
@@ -71,7 +67,7 @@ function App() {
             {data.length ? <DataInfo data={data} /> : null}
           </div>
           <div className="eight wide column">
-            <VideoList />
+            <VideoList videos={videos} />
           </div>
         </div>
     </div>
