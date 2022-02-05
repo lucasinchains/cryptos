@@ -3,7 +3,13 @@ import React from 'react';
 const VideoItem = ({video}) => {
   return (
       <div>
-          <h3>{video.snippet.title}</h3>
+        <h4>{video.snippet.title}</h4>
+          <iframe 
+              src={`http://youtube.com/embed/${video.id.videoId}`}
+              allowfullscreen="allowfullscreen"
+              width="500px"
+              height="300px">
+          </iframe>
       </div>
   );
 };
