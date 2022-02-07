@@ -5,8 +5,8 @@ const VideoItem = ({video}) => {
       <div>
         <h4>{video.snippet.title}</h4>
           <iframe 
-              src={`http://youtube.com/embed/${video.id.videoId}`}
-              allowfullscreen="allowfullscreen"
+              src={`https://www.youtube-nocookie.com/embed/${video.id.videoId}`}
+              allowFullScreen="allowfullscreen"
               width="500px"
               height="300px">
           </iframe>

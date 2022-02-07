@@ -1,10 +1,10 @@
-import React, { useEffect } from "react"
-import { useState } from "react"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
 import Form from "./components/Form"
 import VideoList from "./components/VideoList"
 import Error from "./components/Error"
 import DataInfo from "./components/DataInfo"
+import Message from "./components/Message"
 import { API_KEY } from "./components/apis/crypto-compare"
 import { KEY_YT } from "./components/apis/youtube"
 
@@ -67,7 +67,7 @@ function App() {
             {data.length ? <DataInfo data={data} /> : null}
           </div>
           <div className="eight wide column">
-            <VideoList videos={videos} />
+            {videos.length ? <VideoList videos={videos} /> : <Message message='Start a search to get the lastest updates' />}
           </div>
         </div>
     </div>
