@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
+import Header from "./components/Header"
 import Form from "./components/Form"
 import VideoList from "./components/VideoList"
 import Error from "./components/Error"
@@ -53,7 +54,7 @@ function App() {
   
   return (
     <div>
-        <header>Crypto-App: get a sense of the market.</header>
+        <Header />
         <div className="ui grid">
           <div className="eight wide column">
             {error && <Error />}
