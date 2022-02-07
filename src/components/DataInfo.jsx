@@ -6,10 +6,10 @@ const DataInfo = ({data}) => {
         price: data[0]['PRICE'],
         dayHigh: data[0]['HIGHDAY'],
         dayLow: data[0]['LOWDAY'],
-        marketCap: data[0]['MKTCAP']
+        dayChange: data[0]['CHANGE24HOUR']
     };
 
-    const {price, dayHigh, dayLow, marketCap} = dataObject;
+    const {price, dayHigh, dayLow, dayChange} = dataObject;
 
   return (
       <div>
@@ -17,7 +17,7 @@ const DataInfo = ({data}) => {
               <li>Price: {price}</li>
               <li>Day high: {dayHigh}</li>
               <li>Day low:{dayLow}</li>
-              <li>Market Cap:{marketCap}</li>
+              <li>Change last 24H:{dayChange}</li>
           </ul>
       </div>
   );
