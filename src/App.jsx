@@ -12,8 +12,14 @@ function App() {
   const [currency, setCurrency] = useState('');
   const [cryptocurrency, setCryptocurrency] = useState('');
   const [currencyPair, setCurrencyPair] = useState([]);
+  // data is not used
   const [data, setData] = useState([])
   const [error, setError] = useState(false);
+
+  /* Hardly recommend to separate the have helper functions to hit the API
+  Example: have an crypto-compare.service.js where you make the api call."" 
+  This way you separate the presentation layer with the business logic layer. 
+  */
 
   useEffect(async () => {
     if(currencyPair.length > 0) {
@@ -27,7 +33,12 @@ function App() {
  // I NEED TO RESET THE FORM AFTER SUBMIT BUT HOW? VALUES IN Form.jsx ARE STATIC STRINGS
   const onFormSubmit = (e) => {
     e.preventDefault();
-  
+    /*
+    Same logic is to do this: 
+      let currencyIsEmpty = currency === "" || cryptocurrency === ""
+      setError(currencyIsEmpty)
+      !currencyIsEmpty && setCurrencyPair([currency, cryptocurrency])
+     */
     if(currency === "" || cryptocurrency === "") {
       setError(true);
       return;

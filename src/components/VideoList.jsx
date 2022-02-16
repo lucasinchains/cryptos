@@ -8,4 +8,13 @@ const VideoList = () => {
   );
 };
 
+/*
+const VideoList = () => (
+      <div>
+          Video list
+      </div>
+  );
+};
+ */
+
 export default VideoList;
