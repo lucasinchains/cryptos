@@ -13,12 +13,10 @@ const DataInfo = ({data}) => {
 
   return (
       <div>
-          <ul>
-              <li>Price: {price}</li>
-              <li>Day high: {dayHigh}</li>
-              <li>Day low:{dayLow}</li>
-              <li>Change last 24H:{dayChange}</li>
-          </ul>
+        <p>Price:<span>{price}</span></p>
+        <p>Day high: {dayHigh}</p>
+        <p>Day low:{dayLow}</p>
+        <p>Change last 24H:{dayChange}</p>
       </div>
   );
 };

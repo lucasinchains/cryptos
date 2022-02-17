@@ -1,0 +1,63 @@
+.body {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(5, 64, 226, 0.993);
+  padding: 25px;
+  color: aliceblue;
+  font-size: xx-large;
+  text-align: center;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+}
+
+.column-crypto {
+  flex: 40%;
+  width: 100%;
+  border-style: solid;
+  margin-top: 15%;
+}
+
+.column-videos {
+  flex: 60%;
+  border-style: solid;
+  margin: 5%;
+}
+
+.medium ui button {
+  width: 100%;
+}
+
+.form {
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #1187e7;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 16px 30px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.medium button {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}

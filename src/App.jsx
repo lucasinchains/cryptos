@@ -6,8 +6,9 @@ import VideoList from "./components/VideoList"
 import Error from "./components/Error"
 import DataInfo from "./components/DataInfo"
 import Message from "./components/Message"
-import { API_KEY } from "./components/apis/crypto-compare"
-import { KEY_YT } from "./components/apis/youtube"
+import "./styles/styles.css"
+import { API_KEY } from "./components/keys/crypto-compare"
+import { KEY_YT } from "./components/keys/youtube"
 
 
 function App() {
@@ -42,32 +43,28 @@ function App() {
   
   const onFormSubmit = (e) => {
     e.preventDefault();
+
+    let currencyIsEmpty = currency === "" || cryptocurrency === ""
     
-    if(currency === "" || cryptocurrency === "") {
-      setError(true);
-      return;
-    } else {
-      setError(false);
-      setCurrencyPair([currency, cryptocurrency]);
-    }
+    setError(currencyIsEmpty);
+    setCurrencyPair([currency, cryptocurrency])
+    
   }; 
   
   return (
-    <div>
+    <div className='body'>
         <Header />
-        <div className="ui grid">
-          <div className="eight wide column">
+        <div className="row">
+          <div className="column-crypto">
             {error && <Error />}
             <Form 
               setCurrency={setCurrency}
               setCryptocurrency={setCryptocurrency}
               onFormSubmit={onFormSubmit}
             />
-            <br></br>
-            <br></br>
             {data.length ? <DataInfo data={data} /> : null}
           </div>
-          <div className="eight wide column">
+          <div className="column-videos">
             {videos.length ? <VideoList videos={videos} /> : <Message message='Start a search to get the lastest updates' />}
           </div>
         </div>
