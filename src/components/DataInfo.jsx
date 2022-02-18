@@ -12,7 +12,7 @@ const DataInfo = ({data}) => {
   return (
       <div className="data-info">
         <div className="data-info-item">
-          {dataInfo.map(infoItem => <p>{infoItem.tag}: <span>{infoItem.price}</span></p>)}
+          {dataInfo.map(infoItem => <p key={infoItem.tag}>{infoItem.tag}: <span>{infoItem.price}</span></p>)}
         </div>
       </div>
   );
