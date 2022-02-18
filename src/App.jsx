@@ -3,9 +3,8 @@ import axios from "axios"
 import Header from "./components/Header"
 import Form from "./components/Form"
 import VideoList from "./components/VideoList"
-import Error from "./components/Error"
-import DataInfo from "./components/DataInfo"
 import Message from "./components/Message"
+import DataInfo from "./components/DataInfo"
 import "./styles/styles.css"
 import { API_KEY } from "./components/keys/crypto-compare"
 import { KEY_YT } from "./components/keys/youtube"
@@ -48,7 +47,6 @@ function App() {
     
     setError(currencyIsEmpty);
     setCurrencyPair([currency, cryptocurrency])
-    
   }; 
   
   return (
@@ -56,7 +54,7 @@ function App() {
         <Header />
         <div className="row">
           <div className="column-crypto">
-            {error && <Error />}
+            {error && <Message color="red" message="All fields are required" />}
             <Form 
               setCurrency={setCurrency}
               setCryptocurrency={setCryptocurrency}
@@ -65,7 +63,7 @@ function App() {
             {data.length ? <DataInfo data={data} /> : null}
           </div>
           <div className="column-videos">
-            {videos.length ? <VideoList videos={videos} /> : <Message message='Start a search to get the lastest updates' />}
+            {videos.length ? <VideoList videos={videos} /> : <Message color="yellow" message="Start a search to get the latest info" />}
           </div>
         </div>
     </div>

@@ -21,8 +21,8 @@
 .column-crypto {
   flex: 40%;
   width: 100%;
-  border-style: solid;
-  margin-top: 15%;
+  height: 100%;
+  margin-top: 5%;
 }
 
 .column-videos {
@@ -36,8 +36,27 @@
 }
 
 .form {
-  border: 1px solid white;
-  border-radius: 4px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+.form-component {
+  margin: 15px;
+}
+
+.label {
+  display: block;
+  font-size: large;
+}
+
+.select {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: large;
 }
 
 input[type="submit"] {
@@ -45,19 +64,48 @@ input[type="submit"] {
   background-color: #1187e7;
   border: none;
   border-radius: 5px;
+  margin: 5px, 10px;
   color: white;
+  font-size: large;
   padding: 16px 30px;
   text-decoration: none;
-  margin: 4px 2px;
   cursor: pointer;
 }
 
-.medium button {
+.medium-button {
   background-color: #04aa6d;
   border: none;
   color: white;
+  font-weight: bolder;
   padding: 16px 32px;
+  margin: 50px, 0;
   text-decoration: none;
-  margin: 4px 2px;
   cursor: pointer;
+}
+
+.warning {
+  padding: 10px;
+  text-align: center;
+  font-size: large;
+}
+
+.start-message {
+  text-align: center;
+}
+
+span {
+  color: rgb(103, 206, 7);
+  font-size: xx-large;
+}
+
+.data-info {
+  padding: 15px;
+  margin: 15px;
+  border-style: ridge;
+}
+
+.data-info-item {
+  font-size: x-large;
+  margin-bottom: 15px;
+  font-style: oblique;
 }

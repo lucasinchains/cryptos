@@ -27,19 +27,19 @@ const Form = ({setCurrency, setCryptocurrency, onFormSubmit}) => {
   return (
     <div className='form'>
         <form onSubmit={onFormSubmit}>
-            <div>
-                <label htmlFor="currency-list">Choose currency: </label>
-                <select name="currency-list" id="currency-list" onChange={e => setCurrency(e.target.value)}>
+            <div className="form-component">
+                <label htmlFor="currency-list" className="label">Choose currency: </label>
+                <select className="select" name="currency-list" id="currency-list" onChange={e => setCurrency(e.target.value)}>
                     {currencies.map(currency => <option value={currency.value}>{currency.currencyName}</option>)}
                 </select>
             </div>
-            <div>
-                <label htmlFor="crypto-list">Choose cryptocurrency: </label>
-                <select name="crypto-list" id="crypto-list" onChange={e => setCryptocurrency(e.target.value)}>
+            <div className="form-component">
+                <label htmlFor="crypto-list" className="label">Choose cryptocurrency: </label>
+                <select className="select" name="crypto-list" id="crypto-list" onChange={e => setCryptocurrency(e.target.value)}>
                     {cryptocurrencies.map(cryptocurrency => <option value={cryptocurrency.value}>{cryptocurrency.currencyName}</option>)}
                 </select>
             </div>
-            <input className="medium button" type='submit' />
+            <input className="medium-button" type='submit' value="Search Market" />
         </form>
     </div>
 );

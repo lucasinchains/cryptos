@@ -12,11 +12,19 @@ const DataInfo = ({data}) => {
     const {price, dayHigh, dayLow, dayChange} = dataObject;
 
   return (
-      <div>
-        <p>Price:<span>{price}</span></p>
-        <p>Day high: {dayHigh}</p>
-        <p>Day low:{dayLow}</p>
-        <p>Change last 24H:{dayChange}</p>
+      <div className="data-info">
+        <div className="data-info-item">
+          <p>Price: <span>{price}</span></p>
+        </div>
+        <div className="data-info-item">
+          <p>Day high: <span>{dayHigh}</span></p>
+        </div>
+        <div className="data-info-item">
+          <p>Day low: <span>{dayLow}</span></p>
+        </div>
+        <div className="data-info-item">
+          <p>Change last 24H: <span>{dayChange}</span></p>
+        </div>
       </div>
   );
 };
