@@ -2,14 +2,15 @@ import React from 'react';
 
 const VideoItem = ({video}) => {
   return (
-      <div>
+      <div className="video-item">
         <h4>{video.snippet.title}</h4>
-          <iframe 
+          <iframe
               src={`https://www.youtube-nocookie.com/embed/${video.id.videoId}`}
               allowFullScreen="allowfullscreen"
               width="500px"
               height="300px">
           </iframe>
+          <hr class="solid" />
       </div>
   );
 };
