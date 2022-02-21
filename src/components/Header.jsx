@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className='header'>Crypto-App: get a sense of the market.</header>
+    <header id="top-page" className='header'>Crypto-App: get a sense of the market.</header>
   );
 };
 

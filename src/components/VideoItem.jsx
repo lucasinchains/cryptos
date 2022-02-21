@@ -10,7 +10,7 @@ const VideoItem = ({video}) => {
               width="500px"
               height="300px">
           </iframe>
-          <hr class="solid" />
+          <hr className="solid" />
       </div>
   );
 };

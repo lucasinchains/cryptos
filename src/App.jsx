@@ -5,9 +5,10 @@ import Form from "./components/Form"
 import VideoList from "./components/VideoList"
 import Message from "./components/Message"
 import DataInfo from "./components/DataInfo"
+import TopButton from "./components/TopButton"
 import "./styles/styles.css"
-import { API_KEY } from "./components/keys/crypto-compare"
-import { KEY_YT } from "./components/keys/youtube"
+import { API_KEY } from "./components/keys/crypto-compare.service"
+import { KEY_YT } from "./components/keys/youtube_service.jsx"
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
             q: `${cryptocurrency} crypto news`,
             key: KEY_YT
           }
-        }
+        } 
       )
 
       setData([response.data.DISPLAY[`${cryptocurrency}`][`${currency}`]])
@@ -66,6 +67,7 @@ function App() {
             {videos.length ? <VideoList videos={videos} /> : <Message color="yellow" message="Start a search to get the latest info" />}
           </div>
         </div>
+        <TopButton />
     </div>
   )
 }
